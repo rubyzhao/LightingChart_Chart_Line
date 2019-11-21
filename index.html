@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Using chart in HTML page</title>
+    <meta charset="utf-8" />
+
+    <!-- Flexbox styling to have the chart and header fill the page.
+        Chart will take as much space as possible. -->
+    <link rel="stylesheet" href="./css/line.css">
+</head>
+
+<body class="box">
+    <h1 class="row header">LightningChart<sup>&#174;</sup> JS in HTML page</h1>
+
+    <!-- Create div to render the chart into-->
+    <div id="target" class="row content"></div>
+
+    <!--IIFE assembly (lcjs.iife.js) is a standalone JS file, 
+      which does not need any build tools, 
+      such as NPM, to be installed-->
+    <!--Script source must be defined in it's own script tag-->
+    <script src="./src/lcjs.iife.js"></script>
+    <script src="./src/line.js"></script>
+    
+</body>
+
+</html>
