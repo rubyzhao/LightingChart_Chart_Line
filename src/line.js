@@ -5,7 +5,8 @@
 
 // Extract required parts from LightningChartJS.
 const {
-    lightningChart
+    lightningChart,
+    DataPatterns
 } = lcjs //Note: @arction/lcjs is not needed here, when using IIFE assembly
 
 // Create a XY Chart.
@@ -15,6 +16,12 @@ const chart = lightningChart().ChartXY({
     containerId: 'target'
 })
     .setTitle('Sine Wave') // Set chart title
+
+chart.getDefaultAxisX()
+    .setAnimationScroll( undefined )
+
+chart.getDefaultAxisY()
+    .setAnimationScroll( undefined )
 
     var chartData = [];
     var loop = 2e4;
@@ -29,6 +36,6 @@ const chart = lightningChart().ChartXY({
     }
 
 // Add a line series.
-const lineSeries = chart.addLineSeries()
+const lineSeries = chart.addLineSeries({ dataPattern: DataPatterns.horizontalProgressive })
     .setName('My data')
     .add(chartData)
